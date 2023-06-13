@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+#board {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap; /*cell wrap around each other*/
+  border: solid 2px rgb(164, 45, 160);
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: solid 2px black;
+  box-sizing: border-box;
+  /*center the items inside the square*/
+  display: flex; /*appling flex layout to the flex items or children of the container only. So, the container itself stays a block level element and thus takes up the entire width of the screenr. This causes every flex container to move to a new line on the screen.
+  */
+  justify-content: center; /*aligns our item on the main axis*/
+  align-items: center; /*aligns our item on the cross axis*/
+}
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%; /*transforms square to circle*/
+  border: 15px solid blue;
+  box-sizing: border-box; /*padding and border are included in the width and height and thus the content of this HTML element will shrink instead of expanding the elements total size*/
+}
