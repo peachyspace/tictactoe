@@ -22,7 +22,8 @@ body {
   background-color: white;
   border: solid 2px black;
   box-sizing: border-box;
-  /*center the items inside the square*/
+
+  /*code below keeps the items inside the square*/
   display: flex; /*appling flex layout to the flex items or children of the container only. So, the container itself stays a block level element and thus takes up the entire width of the screenr. This causes every flex container to move to a new line on the screen.
   */
   justify-content: center; /*aligns our item on the main axis*/
@@ -35,4 +36,38 @@ body {
   border-radius: 50%; /*transforms square to circle*/
   border: 15px solid blue;
   box-sizing: border-box; /*padding and border are included in the width and height and thus the content of this HTML element will shrink instead of expanding the elements total size*/
+}
+
+.cross {
+  height: 90px;
+  width: 90px;
+  position: relative; /*relative to where it was intially positioned*/
+  transform: rotate(45deg);
+}
+/* position absolute uses the elements originating coordinates. Typically
+ the originating coordinate is 0x, 0y. However you can give different originating coordinates.
+ The parent element(div.cross) has the position:relative rule which causes the cross.before and cross.after to take that as the rendering origin. These elements use it's parents posittion as its originating coordinates.
+ */
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  background-color: red;
+}
+/*
+the before selector can be used to insert content before the content of the selected element or elements.
+the after selector can be used to insert content after the content of the selected element or elements.
+*/
+
+.cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+.cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
 }
