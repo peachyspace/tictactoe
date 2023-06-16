@@ -34,7 +34,7 @@ body {
   height: 90px;
   width: 90px;
   border-radius: 50%; /*transforms square to circle*/
-  border: 15px solid blue;
+  border: 15px solid rgb(71, 205, 158);
   box-sizing: border-box; /*padding and border are included in the width and height and thus the content of this HTML element will shrink instead of expanding the elements total size*/
 }
 
@@ -52,7 +52,7 @@ body {
 .cross:after {
   content: "";
   position: absolute;
-  background-color: red;
+  background-color: rgb(203, 64, 237);
 }
 /*
 the before selector can be used to insert content before the content of the selected element or elements.

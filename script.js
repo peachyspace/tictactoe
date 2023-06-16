@@ -38,10 +38,21 @@ function updatingScore() {
     const circleWins = array.every((cell) =>
       allSquares[cell].firstChild?.classList.contains("circle")
     );
+    if (circleWins) {
+      infoDisplay.textContent = "Circle is the winner!!!";
+      allSquares.forEach(square.replaceWith(square.cloneNode(true)));
+      return;
+    }
   });
-  if (circleWins) {
-    infoDisplay.textContent = "Circle is the winner!!!";
-    allSquares.forEach(square.replaceWith(square.cloneNode(true)));
-    return;
-  }
+
+  winningCombos.forEach((array) => {
+    const crossWins = array.every((cell) =>
+      allSquares[cell].firstChild?.classList.contains("cross")
+    );
+    if (crossWins) {
+      infoDisplay.textContent = "Cross is the winner!!!";
+      allSquares.forEach(square.replaceWith(square.cloneNode(true)));
+      return;
+    }
+  });
 }
